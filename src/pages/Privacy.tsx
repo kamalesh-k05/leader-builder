@@ -2,7 +2,7 @@ export default function Privacy() {
   return (
     <div className="min-h-screen bg-black text-white px-8 md:px-16 lg:px-20 py-24">
       <div className="max-w-3xl mx-auto">
-        <a href="/northform-atelier/" className="text-xs tracking-[0.14em] uppercase text-white/60 hover:text-white">← Back to Leader Builder</a>
+        <a href="/leader-builder/" className="text-xs tracking-[0.14em] uppercase text-white/60 hover:text-white">← Back to Leader Builder</a>
         <h1 className="font-heading italic text-5xl tracking-tight mt-6">Privacy Policy</h1>
         <p className="text-sm text-white/50 mt-2">Last updated: 8 Sep 2026 — Leader Builder, Chennai & Dubai</p>
         <div className="mt-8 space-y-6 text-sm font-light leading-relaxed text-white/80">

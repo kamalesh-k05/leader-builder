@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://northform-atelier.vercel.app/sitemap.xml
+Sitemap: https://kamalesh-k05.github.io/leader-builder/sitemap.xml

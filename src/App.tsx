@@ -272,7 +272,7 @@ function Home() {
           </form>
         </div>
         <div className="max-w-[1280px] mx-auto flex justify-between flex-wrap gap-4 text-[10px] tracking-[0.1em] uppercase text-white/30 mt-8">
-          <span>© 2026 Leader Builder · Private — <a href="/northform-atelier/privacy" className="underline">Privacy</a> · <a href="/northform-atelier/terms" className="underline">Terms</a></span>
+          <span>© 2026 Leader Builder · Private — <a href="/leader-builder/privacy" className="underline">Privacy</a> · <a href="/leader-builder/terms" className="underline">Terms</a></span>
           <span>Instrument Serif + Barlow · Liquid Glass · Bronze on Black</span>
         </div>
       </section>
@@ -284,7 +284,7 @@ function Home() {
 
 export default function App() {
   return (
-    <BrowserRouter basename="/northform-atelier">
+    <BrowserRouter basename="/leader-builder">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/privacy" element={<Privacy />} />
