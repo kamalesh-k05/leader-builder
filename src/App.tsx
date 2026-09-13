@@ -10,8 +10,8 @@ import NotFound from "./pages/NotFound";
 import FAQ from "./components/FAQ";
 import CookieConsent from "./components/CookieConsent";
 
-const heroVideo = "/hero.mp4";
-const capVideo = "/atelier.mp4";
+const heroVideo = `${import.meta.env.BASE_URL}hero.mp4`;
+const capVideo = `${import.meta.env.BASE_URL}atelier.mp4`;
 
 function Home() {
   const easeOut = { filter: "blur(0px)", opacity: 1, y: 0 } as const;
@@ -32,16 +32,16 @@ function Home() {
     <div className="bg-black text-white font-body overflow-x-hidden">
       <CookieConsent onAccept={loadAnalytics} />
       {/* HERO — 1/6 Cinematic atelier */}
-      <section className="h-screen overflow-hidden bg-black relative">
+      <section className="min-h-screen overflow-hidden bg-black relative flex flex-col">
         <FadingVideo src={heroVideo} className="absolute left-1/2 top-0 -translate-x-1/2 object-cover object-top z-0" style={{ width: "120%", height: "120%" } as React.CSSProperties} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/35 to-black/85 z-0" />
-        <div className="relative z-10 flex flex-col h-full">
+        <div className="relative z-10 flex flex-col flex-1 min-h-screen">
           <nav className="fixed top-4 left-0 right-0 z-50 flex justify-between items-center px-8 lg:px-16">
-            <div className="liquid-glass h-12 w-12 rounded-full grid place-items-center"><span className="font-heading text-2xl italic">n</span></div>
+            <div className="liquid-glass h-12 w-12 rounded-full grid place-items-center"><span className="font-heading text-2xl italic">L</span></div>
             <div className="hidden md:flex liquid-glass rounded-full px-1.5 py-1.5 items-center gap-1">
               <a href="#work" className="px-3 py-2 text-sm font-medium text-white/90">Maisons</a>
               <a href="#atelier" className="px-3 py-2 text-sm font-medium text-white/90">Atelier</a>
-              <a href="#materiaux" className="px-3 py-2 text-sm font-medium text-white/90">Matériaux</a>
+              <a href="#materiaux" className="px-3 py-2 text-sm font-medium text-white/90">Materials</a>
               <a href="#contact" className="bg-white text-black rounded-full px-4 py-2 text-sm font-medium inline-flex items-center gap-2">Private Consultation <ArrowUpRight className="h-4 w-4" /></a>
             </div>
             <div className="h-12 w-12" />
@@ -51,7 +51,7 @@ function Home() {
               <BlurText text="Houses that outlive us, built with quiet precision." className="text-6xl md:text-7xl lg:text-[5.5rem] font-heading italic text-white leading-[0.8] tracking-[-4px]" />
             </div>
             <motion.p initial={init} animate={easeOut} transition={{ duration: 0.8, delay: 0.8 }} className="text-sm md:text-base text-white/90 max-w-2xl font-body font-light leading-tight mt-4">
-              Northform Atelier is a private construction atelier — not a contractor. Travertine, bronze and oak. One site, one engineer, daily supervision, and a 12-year stewardship.
+              Leader Builder is a private construction studio — not a contractor. Travertine, bronze and oak. One site, one engineer, daily supervision, and a 12-year stewardship.
             </motion.p>
             <motion.div initial={init} animate={easeOut} transition={{ duration: 0.8, delay: 1.1 }} className="mt-6 flex gap-6 items-center flex-wrap justify-center">
               <a href="#contact" className="liquid-glass-strong rounded-full px-5 py-2.5 inline-flex items-center gap-2 text-sm font-medium">Private Consultation <ArrowUpRight className="h-4 w-4" /></a>
@@ -70,11 +70,11 @@ function Home() {
               </div>
             </motion.div>
           </div>
-          <motion.div initial={init} animate={easeOut} transition={{ duration: 0.8, delay: 1.4 }} className="flex flex-col items-center gap-4 pb-8 px-4">
-            <div className="liquid-glass rounded-full px-4 py-2 text-xs text-white/80">Trusted by owners who stay — not flippers</div>
-            <div className="flex gap-12 md:gap-16 flex-wrap justify-center">
+          <motion.div initial={init} animate={easeOut} transition={{ duration: 0.8, delay: 1.4 }} className="flex flex-col items-center gap-3 pb-6 lg:pb-8 px-4 mt-auto pt-6 shrink-0">
+            <div className="liquid-glass rounded-full px-4 py-2 text-xs text-white/90 border border-white/15 bg-white/[0.06]">Trusted by owners who stay — not flippers</div>
+            <div className="flex gap-8 md:gap-12 lg:gap-16 flex-wrap justify-center">
               {["Anahata", "Northgate", "SIPCOT", "Besant", "Vela"].map((n) => (
-                <span key={n} className="font-heading italic text-2xl md:text-3xl tracking-tight text-white/90">{n}</span>
+                <span key={n} className="font-heading italic text-xl md:text-2xl lg:text-3xl tracking-tight text-white">{n}</span>
               ))}
             </div>
           </motion.div>
@@ -219,7 +219,7 @@ function Home() {
             </div>
           </div>
           <div className="flex flex-col justify-center">
-            <div className="text-xs tracking-[0.16em] uppercase text-[#E8D9B0]">Craft & Matériaux</div>
+            <div className="text-xs tracking-[0.16em] uppercase text-[#E8D9B0]">Craft & Materials</div>
             <h2 className="font-heading italic text-5xl leading-[0.9] tracking-[-2px] mt-2">Concrete doesn’t<br />lie. Neither do we.</h2>
             <p className="text-sm text-white/65 font-light leading-relaxed mt-4">Every stage has a checklist, a photo, and a signature. Ask for any pour record and get it in an hour.</p>
             <div className="mt-6 space-y-3">
@@ -272,7 +272,7 @@ function Home() {
           </form>
         </div>
         <div className="max-w-[1280px] mx-auto flex justify-between flex-wrap gap-4 text-[10px] tracking-[0.1em] uppercase text-white/30 mt-8">
-          <span>© 2026 Northform Atelier · Private — <a href="/privacy" className="underline">Privacy</a> · <a href="/terms" className="underline">Terms</a></span>
+          <span>© 2026 Leader Builder · Private — <a href="/northform-atelier/privacy" className="underline">Privacy</a> · <a href="/northform-atelier/terms" className="underline">Terms</a></span>
           <span>Instrument Serif + Barlow · Liquid Glass · Bronze on Black</span>
         </div>
       </section>
@@ -284,7 +284,7 @@ function Home() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/northform-atelier">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/privacy" element={<Privacy />} />
